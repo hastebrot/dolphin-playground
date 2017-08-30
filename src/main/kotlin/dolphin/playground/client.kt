@@ -1,6 +1,6 @@
+package dolphin.playground
+
 import com.canoo.platform.core.DolphinRuntimeException
-import com.canoo.platform.remoting.DolphinBean
-import com.canoo.platform.remoting.Property
 import com.canoo.platform.remoting.client.ClientContext
 import com.canoo.platform.remoting.client.ClientInitializationException
 import com.canoo.platform.remoting.client.ClientShutdownException
@@ -16,13 +16,8 @@ fun main(args: Array<String>) {
     Application.launch(DolphinTestClient::class.java)
 }
 
-@DolphinBean
-class PropertyTestBean {
-    lateinit var stringValue: Property<String>
-}
-
 class DolphinTestClient : DolphinPlatformApplication() {
-    override fun getServerEndpoint() = URL("http://localhost:9999/dolphin")
+    override fun getServerEndpoint() = URL("http://localhost:8080/dolphin")
 
     init {
         println("init")
