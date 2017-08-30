@@ -13,7 +13,7 @@ import javafx.scene.control.Label
 import java.net.URL
 
 fun main(args: Array<String>) {
-    Application.launch(DolphinTestApplication::class.java)
+    Application.launch(DolphinTestClient::class.java)
 }
 
 @DolphinBean
@@ -21,7 +21,7 @@ class PropertyTestBean {
     lateinit var stringValue: Property<String>
 }
 
-class DolphinTestApplication : DolphinPlatformApplication() {
+class DolphinTestClient : DolphinPlatformApplication() {
     override fun getServerEndpoint() = URL("http://localhost:9999/dolphin")
 
     init {
