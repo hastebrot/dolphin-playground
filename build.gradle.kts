@@ -1,7 +1,7 @@
 val kotlinVersion by project
 
 plugins {
-    kotlin("jvm", "1.1.4-2")
+    kotlin("jvm", "1.1.4-3")
 }
 
 repositories {
