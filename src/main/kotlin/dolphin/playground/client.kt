@@ -14,7 +14,6 @@ import javafx.scene.Scene
 import javafx.stage.Stage
 import javafx.application.Platform
 import javafx.geometry.Insets
-import javafx.scene.Node
 import javafx.scene.control.Label
 import javafx.scene.control.TextField
 import javafx.scene.layout.StackPane
@@ -63,9 +62,7 @@ class FooViewBinder(clientContext: ClientContext) :
         }
     }
 
-    override fun getRootNode(): Node {
-        return textField
-    }
+    override fun getRootNode() = textField
 }
 
 class FooClientApplication : DolphinPlatformApplication() {

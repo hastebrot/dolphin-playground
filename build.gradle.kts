@@ -1,4 +1,4 @@
-// gradle wrapper --gradle-version 4.2-rc-1 --distribution-type all
+// gradle wrapper --gradle-version 4.2 --distribution-type all
 
 val kotlinVersion by project
 val junitJupiterVersion by project
