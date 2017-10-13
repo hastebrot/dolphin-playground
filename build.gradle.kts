@@ -1,11 +1,11 @@
-// gradle wrapper --gradle-version 4.2 --distribution-type all
+// gradle wrapper --gradle-version 4.3-rc-1 --distribution-type all
 
 val kotlinVersion by project
 val junitJupiterVersion by project
 val junitPlatformVersion by project
 
 plugins {
-    kotlin("jvm", "1.1.4-3")
+    kotlin("jvm") version "1.1.51"
 }
 
 repositories {
