@@ -1,11 +1,11 @@
-// gradle wrapper --gradle-version 4.3-rc-1 --distribution-type all
+// gradle wrapper --gradle-version 4.8 --distribution-type all
 
-val kotlinVersion by project
-val junitJupiterVersion by project
-val junitPlatformVersion by project
+val kotlinVersion: String by project
 
 plugins {
-    kotlin("jvm") version "1.1.51"
+    val kotlinVersion = "1.2.50"
+
+    kotlin("jvm") version kotlinVersion
 }
 
 repositories {
@@ -13,7 +13,7 @@ repositories {
 }
 
 dependencies {
-    compile(kotlin("stdlib", "$kotlinVersion"))
+    compile(kotlin("stdlib", kotlinVersion))
 
     // dolphin platform.
     compile("com.canoo.dolphin-platform:dolphin-platform-remoting-client-javafx:0.18.0")
@@ -22,10 +22,6 @@ dependencies {
 }
 
 dependencies {
-    testCompile(kotlin("test", "$kotlinVersion"))
-
-    // junit platform.
-    testCompile("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
-    testRuntime("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
-    testRuntime("org.junit.platform:junit-platform-launcher:$junitPlatformVersion")
+    testCompile(kotlin("test", kotlinVersion))
+    testCompile(kotlin("test-junit5", kotlinVersion))
 }
