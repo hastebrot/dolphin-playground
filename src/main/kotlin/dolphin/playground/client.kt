@@ -51,9 +51,9 @@ class FooViewBinder(clientContext: ClientContext) :
         try {
             println("--- binder init: $textField")
             textField.textProperty().addListener { _, oldValue, newValue ->
-                println("--- value changed to '$newValue' (from '$oldValue').")
+                println("--- string changed to '$newValue' (from '$oldValue').")
             }
-            FXBinder.bind(textField.textProperty()).bidirectionalTo(model.valueProperty())
+            FXBinder.bind(textField.textProperty()).bidirectionalTo(model.stringProperty())
 
         }
         catch (exception: Throwable) {

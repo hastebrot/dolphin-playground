@@ -16,6 +16,7 @@ fun main(args: Array<String>) {
 open class FooServerApplication : SpringBootServletInitializer()
 
 @DolphinController(FooConstants.FOO_CONTROLLER_NAME)
+@Suppress("unused")
 open class FooController {
     @DolphinModel
     private lateinit var model: FooPropertyBean
@@ -23,13 +24,16 @@ open class FooController {
     @PostConstruct
     fun init() {
         println("--- controller init: $model")
-        model.valueProperty().onChanged { event ->
-            println("--- value changed to '${event.newValue}' (from '${event.oldValue}').")
+        model.stringProperty().onChanged { event ->
+            println("--- string changed to '${event.newValue}' (from '${event.oldValue}').")
+        }
+        model.getArray().onChanged { event ->
+            println("--- array changed with '${event.changes}.")
         }
     }
 
     @DolphinAction
     fun reset() {
-        model.value = null
+        model.string = null
     }
 }
