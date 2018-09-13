@@ -16,8 +16,8 @@ dependencies {
     compile(kotlin("stdlib", kotlinVersion))
 
     // dolphin platform.
-    compile("com.canoo.dolphin-platform:dolphin-platform-remoting-client-javafx:0.18.0")
-    compile("com.canoo.dolphin-platform:dolphin-platform-remoting-server-spring:0.18.0")
+    compile("com.canoo.dolphin-platform:dolphin-platform-remoting-client-javafx:1.0.0.CR5")
+    compile("com.canoo.dolphin-platform:dolphin-platform-remoting-server-spring:1.0.0.CR5")
 //    compile("org.slf4j:slf4j-simple:1.7.25")
 }
 

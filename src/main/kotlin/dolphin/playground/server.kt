@@ -1,8 +1,8 @@
 package dolphin.playground
 
-import com.canoo.platform.remoting.server.DolphinAction
-import com.canoo.platform.remoting.server.DolphinController
-import com.canoo.platform.remoting.server.DolphinModel
+import com.canoo.platform.remoting.server.RemotingAction
+import com.canoo.platform.remoting.server.RemotingController
+import com.canoo.platform.remoting.server.RemotingModel
 import com.canoo.platform.server.spring.DolphinPlatformApplication
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.web.support.SpringBootServletInitializer
@@ -15,10 +15,10 @@ fun main(args: Array<String>) {
 @DolphinPlatformApplication
 open class FooServerApplication : SpringBootServletInitializer()
 
-@DolphinController(FooConstants.FOO_CONTROLLER_NAME)
+@RemotingController(FooConstants.FOO_CONTROLLER_NAME)
 @Suppress("unused")
 open class FooController {
-    @DolphinModel
+    @RemotingModel
     private lateinit var model: FooPropertyBean
 
     @PostConstruct
@@ -32,7 +32,7 @@ open class FooController {
         }
     }
 
-    @DolphinAction
+    @RemotingAction
     fun reset() {
         model.string = null
     }

@@ -1,14 +1,14 @@
 package dolphin.playground
 
-import com.canoo.platform.remoting.DolphinBean
 import com.canoo.platform.remoting.ObservableList
 import com.canoo.platform.remoting.Property
+import com.canoo.platform.remoting.RemotingBean
 
 object FooConstants {
     const val FOO_CONTROLLER_NAME = "FooController"
 }
 
-@DolphinBean
+@RemotingBean
 class FooPropertyBean {
     private lateinit var stringProperty: Property<String?>
     fun stringProperty() = stringProperty
