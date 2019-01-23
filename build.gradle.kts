@@ -1,7 +1,5 @@
-import org.gradle.api.internal.HasConvention
 import org.jetbrains.dokka.gradle.DokkaTask
 import org.jetbrains.kotlin.gradle.dsl.Coroutines
-import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 val gradleWrapperVersion by extra { "5.1.1" }
@@ -48,6 +46,20 @@ kotlin {
 }
 
 tasks {
+    val runServer by creating(JavaExec::class) {
+        dependsOn("classes")
+        group = "scripts"
+        main = "dolphin.playground.Server"
+        classpath = sourceSets["main"].runtimeClasspath
+    }
+
+    val runClient by creating(JavaExec::class) {
+        dependsOn("classes")
+        group = "scripts"
+        main = "dolphin.playground.Client"
+        classpath = sourceSets["main"].runtimeClasspath
+    }
+
     withType<Wrapper> {
         gradleVersion = gradleWrapperVersion
         distributionType = Wrapper.DistributionType.ALL

@@ -1,3 +1,4 @@
+@file:JvmName("Server")
 package dolphin.playground
 
 import com.canoo.platform.remoting.server.RemotingAction

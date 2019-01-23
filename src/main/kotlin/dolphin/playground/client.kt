@@ -1,3 +1,4 @@
+@file:JvmName("Client")
 package dolphin.playground
 
 import com.canoo.platform.client.PlatformClient
