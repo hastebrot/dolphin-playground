@@ -4,12 +4,12 @@ import org.jetbrains.kotlin.gradle.dsl.Coroutines
 import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val gradleWrapperVersion by extra { "5.0-rc-1" }
-val kotlinVersion by extra { "1.3.0" }
+val gradleWrapperVersion by extra { "5.1.1" }
+val kotlinVersion by extra { "1.3.11" }
 val dolphinVersion by extra { "1.0.0.CR5" }
 
 plugins {
-    val kotlinVersion = "1.3.0"
+    val kotlinVersion = "1.3.11"
     val dokkaVersion = "0.9.17"
 
     kotlin("jvm") version kotlinVersion
